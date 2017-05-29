@@ -1,0 +1,68 @@
+// Place all the styles related to the personal controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+navL {
+    width:130px;
+    height:400px;
+    margin-top:60px;
+    margin-left:70px;
+    padding-top:30px;
+    border-radius: 5px;
+    background-color:#eeeeee;
+
+    float:left;
+    /*padding:1px;*/
+}
+#navL a{
+    color: black;
+    margin-left:10px;
+}
+
+#navR {
+    width:130px;
+    height:400px;
+    margin-top:60px;
+    margin-right:70px;
+    padding-top:30px;
+    border-radius: 5px;
+    background-color:#eeeeee;
+
+    float:right;
+    /*padding:1px;*/ 
+}         
+#navR ul li a{
+    color: black;
+}        
+
+
+
+#corporation {
+    text-align: center;
+    color:white;
+    height:40px;
+    line-height:40px;
+    background-color: black;
+}
+
+
+
+
+#addressNavL {
+    width:130px;
+    height:400px;
+    margin-left:70px;
+    padding-top:30px;
+    border-radius: 5px;
+    background-color:#eeeeee;
+
+    float:left;
+    /*padding:1px;*/
+}
+#addressNavL a{
+    color: #777;
+    margin-left:10px;
+}
+
+
+

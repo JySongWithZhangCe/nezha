@@ -1,0 +1,24 @@
+.panel.panel-default
+  .panel-heading
+    | 充值优惠
+  .panel-body
+    table.table.table-striped
+      thead
+        tr
+          th Min
+          th Money give
+          th
+          th
+          th
+
+      tbody
+        - @user_card_charge_settings.each do |user_card_charge_setting|
+          tr
+            td = user_card_charge_setting.min
+            td = user_card_charge_setting.money_give
+            td = link_to 'Show', user_card_charge_setting
+            td = link_to 'Edit', edit_user_card_charge_setting_path(user_card_charge_setting)
+            td = link_to 'Destroy', user_card_charge_setting, data: { confirm: 'Are you sure?' }, method: :delete
+    = will_paginate @user_card_charge_settings, renderer: BootstrapPagination::Rails
+  .panel-footer
+    = link_to '新建', new_user_card_charge_setting_path, class: 'btn btn-info btn-sm'

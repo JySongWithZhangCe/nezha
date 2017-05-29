@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+
+    <title>订单</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header> 
+         
+          
+
+
+
+<div class="container">
+        
+   <h1>订单列表</h2> 
+
+
+
+
+<table class="table table-stripted">
+        <thead>
+            <tr>
+                <th>总价</th>
+                <th>类别</th>
+                <th>地址</th>
+                <th>经纬度</th>
+                <th>备注</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+                <td>
+                 10.0￥
+                </td>
+                <td>
+                    <%= order.category %>
+                </td>
+                <td>
+                    <%= order.address %>
+                </td>
+                <td>40.241; 116.455596</td>
+                <td></td>
+                <td>
+                    <%= link_to '查看',      order_path(order) %>
+                </td>
+                <td>
+                    <%= link_to '修改地址', edit_order_path(order) %>
+                </td>
+                <td>
+                    <%= link_to '删除', order_path(order),
+                                 method: :delete,
+                                 data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+
+
+
+</div>
+
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+  </body>
+</html>
+
+

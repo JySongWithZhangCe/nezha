@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month_pay: 1.5
+  month_recharge: 1.5
+  balance: 1.5
+  point: 1
+  discount: 1
+
+two:
+  month_pay: 1.5
+  month_recharge: 1.5
+  balance: 1.5
+  point: 1
+  discount: 1

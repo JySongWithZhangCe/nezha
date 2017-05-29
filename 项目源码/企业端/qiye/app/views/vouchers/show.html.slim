@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Order:
+  = @voucher.order
+p
+  strong Status:
+  = @voucher.status
+p
+  strong Payed at:
+  = @voucher.payed_at
+p
+  strong Money:
+  = @voucher.money
+p
+  strong User card pay:
+  = @voucher.user_card_pay
+
+= link_to 'Edit', edit_voucher_path(@voucher)
+'|
+= link_to 'Back', vouchers_path

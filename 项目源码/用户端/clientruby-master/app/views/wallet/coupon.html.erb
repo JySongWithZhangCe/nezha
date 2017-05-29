@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>哈哈</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+          <li><span style="color: red;  line-height:40px"> <%= link_to "VIP",    root_path %> </span></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+<div class="container">
+
+   <h1>优惠券</h2> 
+
+
+
+</div>
+
+
+
+<footer class="footer">
+    <small>
+    <a href="http://railstutorial.org/">浣衣工作室</a>
+    by 白璐
+    </small>
+    <nav>
+    <ul>
+        <li><%= link_to "新闻",  '#'  %></li>
+        <li><%= link_to "联系", '#' %></li>
+        <li><a href="http://news.railstutorial.org/">合作</a></li>
+    </ul>
+    </nav>
+
+
+</footer>
+
+</div>
+
+
+  </body>
+</html>
+

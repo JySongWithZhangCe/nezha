@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Kind:
+  = @user_card_log.kind
+p
+  strong Real money:
+  = @user_card_log.real_money
+p
+  strong Fake money:
+  = @user_card_log.fake_money
+p
+  strong Loggable type:
+  = @user_card_log.loggable_type
+p
+  strong Loggable:
+  = @user_card_log.loggable_id
+
+= link_to 'Edit', edit_user_card_log_path(@user_card_log)
+'|
+= link_to 'Back', user_card_logs_path

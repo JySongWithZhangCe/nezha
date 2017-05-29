@@ -1,0 +1,29 @@
+h1 Listing vouchers
+
+table
+  thead
+    tr
+      th Order
+      th Status
+      th Payed at
+      th Money
+      th User card pay
+      th
+      th
+      th
+
+  tbody
+    - @vouchers.each do |voucher|
+      tr
+        td = voucher.order
+        td = voucher.status
+        td = voucher.payed_at
+        td = voucher.money
+        td = voucher.user_card_pay
+        td = link_to 'Show', voucher
+        td = link_to 'Edit', edit_voucher_path(voucher)
+        td = link_to 'Destroy', voucher, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Voucher', new_voucher_path

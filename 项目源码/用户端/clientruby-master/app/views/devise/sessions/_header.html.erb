@@ -1,0 +1,17 @@
+# encoding: utf-8
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "ä½ÒÂ·»", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Ê×Ò³",    root_path %></li>
+          <li><%= link_to "µÇÂ¼",   new_user_session_path %></li>
+          <li><%= link_to "×¢²á", new_user_registration_path %></li>
+          <li><%= link_to "ÍË³ö", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+

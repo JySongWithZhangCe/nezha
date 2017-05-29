@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>哈哈</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+          <li><span style="color: red;  line-height:40px"> <%= link_to "VIP",    root_path %> </span></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+   <div id="navL">
+                <ul>
+                    <li><%= link_to "会员卡",   wallet_card_path %></li>
+                    <li><%= link_to "优惠券",    wallet_coupon_path %></li>
+                    <li><%= link_to "开通VIP",   wallet_vip_path %></li>
+                </ul>
+            </div>
+
+
+
+
+
+<div class="container">
+
+   <h1>我的钱包</h2> 
+
+<% @wallets.each do |wallet| %>
+<p>
+  <strong><%= wallet.month %>月充值:</strong>
+  <%= wallet.month_recharge %>￥
+</p>
+<p>
+  <strong><%= wallet.month %>月支出:</strong>
+  <%= wallet.month_pay %>￥
+</p>
+<p>
+  <strong>余额：</strong>
+<span style="color: red">
+  <%= wallet.balance %>￥
+ </span>
+</p>
+
+<p>
+  <strong>积分:</strong>
+  <%= wallet.point %>
+</p>
+<p>
+  <strong>折扣:</strong>
+  <%= wallet.discount %>
+</p>
+
+
+ <%= link_to '充值记录',   membercards_path %>
+<br>
+<%= link_to '去充值', new_membercard_path %>
+<br>
+<%= link_to '前往下单', goods_detail_path %>
+
+
+
+
+ <% end %>
+
+</div>
+
+
+
+<footer class="footer">
+    <small>
+    <a href="http://railstutorial.org/">浣衣工作室</a>
+    by 白璐
+    </small>
+    <nav>
+    <ul>
+        <li><%= link_to "新闻",  '#'  %></li>
+        <li><%= link_to "联系", '#' %></li>
+        <li><a href="http://news.railstutorial.org/">合作</a></li>
+    </ul>
+    </nav>
+
+
+</footer>
+
+</div>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coupon_list: one
+  start_on: 2017-04-21
+  end_on: 2017-04-21
+
+two:
+  coupon_list: two
+  start_on: 2017-04-21
+  end_on: 2017-04-21

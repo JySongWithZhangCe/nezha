@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Min:
+  = @user_card_charge_setting.min
+p
+  strong Money give:
+  = @user_card_charge_setting.money_give
+p
+  strong City:
+  = @user_card_charge_setting.city
+
+= link_to 'Edit', edit_user_card_charge_setting_path(@user_card_charge_setting)
+'|
+= link_to 'Back', user_card_charge_settings_path

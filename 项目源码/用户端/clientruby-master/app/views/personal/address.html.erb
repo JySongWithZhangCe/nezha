@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">  
+
+  <head>
+    <meta charset="UTF-8">  
+
+    <title>收获地址-管理</title>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+          
+   <div id="addressNavL">
+                    <a href="www.baidu.com" style="color: red; font-size:1.5em">账号管理</a> <br>  <br>
+
+                    <ul>
+                        <li><%= link_to "安全设置",  '#'  %></li>
+                        <li><%= link_to "个人资料", '#' %></li>
+                        <li><%= link_to "收获地址", '#' %></li>
+                        <li><%= link_to "分享绑定", '#' %></li>
+                        <li><%= link_to "网站提醒", '#' %></li>
+                    </ul>
+
+            </div>
+
+
+
+<div class="container">
+
+<br>
+<br>
+<%= form_for :article do |f| %>
+  <p>
+    收货人：&nbsp&nbsp&nbsp&nbsp<%=  f.text_field :title %><br>
+    联系电话：&nbsp<%=  f.text_field :title %><br>
+    所在地区：&nbsp<%=  f.text_field :title %><br>
+    街道：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=  f.text_field :title %><br>
+
+    详细地址：&nbsp<%=  f.text_area :title %><br>
+  </p>
+  <p>
+        <input class="btn btn-large btn-primary" type="submit" name="commit" value="保存" data-disable-with="Done" />
+
+  </p>
+<% end %>
+
+<br>
+
+<p id="demo">点击，获得您的坐标：</p>
+<button onclick="getLocation()" class="btn btn-large btn-primary" >Get</button>
+
+
+</div>
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+<script>  
+var x=document.getElementById("demo");  
+function getLocation()  
+  {  
+  if (navigator.geolocation)  
+    {  
+    navigator.geolocation.getCurrentPosition(showPosition,showError);  
+    }  
+  else{x.innerHTML="Geolocation is not supported by this browser.";}  
+  }  
+function showPosition(position)  
+  {  
+  x.innerHTML="经度: " + position.coords.longitude +   
+  "<br />纬度: " + position.coords.latitude;      
+  }  
+function showError(error)  
+  {  
+  switch(error.code)   
+    {  
+    case error.PERMISSION_DENIED:  
+      x.innerHTML="User denied the request for Geolocation."  
+      break;  
+    case error.POSITION_UNAVAILABLE:  
+      x.innerHTML="Location information is unavailable."  
+      break;  
+    case error.TIMEOUT:  
+      x.innerHTML="The request to get user location timed out."  
+      break;  
+    case error.UNKNOWN_ERROR:  
+      x.innerHTML="An unknown error occurred."  
+      break;  
+    }  
+  }  
+</script>  
+
+
+
+
+  </body>
+</html>
+

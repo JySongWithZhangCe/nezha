@@ -1,0 +1,17 @@
+p#notice = notice
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading#operations
+        | 基本信息
+      .panel-body
+        table.table.table-striped
+          tr
+            td width='33%' Name
+            td width='33%' Display_name
+            td width='33%' Comment
+          tr
+          	td width='33%' = @role.name
+            td width='33%' = @role.display_name
+            td width='33%' = @role.comment
+= link_to 'Back', roles_path

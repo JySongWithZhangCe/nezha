@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+
+    <title>订单</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header> 
+         
+          
+
+            <div id="navR">
+                <ul>
+                    <li><%= link_to "个人中心", personal_profile_path %></li>
+                    <li><%= link_to "我的订单", orders_path %></li>
+   <li><%= link_to "我的钱包", wallet_mywa_path %></li>
+                    <li><%= link_to("Test3",{:controller =>'wallet',:action => 'mywa',:user_id =>3})%>  </li>
+                </ul>
+
+            </div>
+
+
+
+
+
+<div class="container">
+        
+   <h1>确认订单</h2> 
+
+
+
+<br>
+<br>
+<br>
+<%= form_for :order, url: orders_path do |f| %>
+
+    <table class="table table-stripted">
+      <thead>
+        <tr>
+          <th>总价</th>
+          <th>类别</th>
+          <th>地址</th>
+          <th>经纬度</th>
+          <th>备注</th>
+          <th>操作</th>
+          <th>更多</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>  <%= f.label :cost, params[:cost] %> </td>
+          <td><%=f.select :category, [["类别A", "A"],["类别B", "B"],["类别C", "C"],["类别D", "D"]] %></td>
+          <td>
+<%=f.select :address, [["默认:北京交通大学海淀区", "Beijing Jiao University"],["海淀1区", "Haidian 1"],["海淀2区","Haidian 2"],["昌平1区","Changping 1"],["昌平2区","Changping 2"]] %>
+          </td>
+          <td>40.241; 116.455596</td>
+          <td></td>
+          <td>
+                    <%= link_to '取消订单',      "http://112.74.13.26:3000/goods/detail" %>
+          </td>
+          <td>
+            -
+          </td>
+        </tr>
+      </tbody>
+    </table>   
+
+ <%= f.text_field :cost %>
+
+
+
+<br>
+<input   class="btn btn-large btn-primary" type="submit" name="commit" value="下单" data-disable-with="Save Order" />
+
+
+<% end %>
+
+
+
+
+
+
+
+</div>
+
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+
+    <title>订单</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header> 
+         
+          
+
+
+
+<div class="container">
+        
+   <h1>订单详情</h2> 
+
+
+
+
+<p>
+  <strong>类别:</strong>
+  <%= @order.category %>
+</p>
+
+<p>
+  <strong>地址:</strong>
+  <%= @order.address %>
+</p>
+<%= link_to '编辑', edit_order_path(@order) %> |
+<%= link_to '返回', orders_path %>
+
+
+
+
+
+
+</div>
+
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+  </body>
+</html>
+
+

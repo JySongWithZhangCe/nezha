@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>哈哈</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+   <div id="navL">
+                <ul>
+                    <li><a href="www.baidu.com">服务介绍</a></li>
+                    <li><a href="www.baidu.com">服务范围</a></li>
+                    <li><a href="www.baidu.com">价目中心</a></li>
+                </ul>
+            </div>
+
+
+            <div id="navR">
+                <ul>
+                    <li><%= link_to "个人中心", personal_profile_path %></li>
+                    <li><%= link_to "我的订单", orders_path %></li>
+                    <li><%= link_to "我的钱包", wallet_mywa_path %></li>
+                    <li><%= link_to("Test3",{:controller =>'wallet',:action => 'mywa',:user_id =>3})%>  </li>
+                </ul>
+
+            </div>
+
+
+
+<div class="container">
+
+
+
+
+
+<div style="line-height:30pt; background-color: #00FFFF; text-align:right;">
+  <span style="padding:10px 20px 10px 20px">首创</span>
+  <span style="padding:10px 20px 10px 20px">袋洗</span>
+  <span style="padding:10px 20px 10px 20px">低至158一袋</span>
+  <span style="padding:10px 100px 10px 20px">HOT! ! !</span>
+</div>
+<div style=" height:550px; background-color:#F0F0F0; margin-top:20px;border-radius:10px; ">
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px 15px 15px 25px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("clothe.png", alt: "Rails"), goods_detail_path %>
+  </div>
+
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("shoes.png", alt: "Rails"), goods_detail_path %>
+  </div>
+
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("a.png", alt: "Rails"), goods_detail_path  %>
+</div>
+
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("b.png", alt: "Rails"), goods_detail_path  %>
+</div>
+
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px 15px 15px 25px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("c.png", alt: "Rails"), goods_detail_path  %>
+</div>
+
+  <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("d.png", alt: "Rails"), goods_detail_path  %>
+</div>
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("e.png", alt: "Rails"), goods_detail_path  %>
+</div>
+ <div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px 15px 15px 15px;font-size:13pt;text-align:center;">洗衣
+       <%= link_to image_tag("clothe.png", alt: "Rails"), goods_detail_path  %>
+  </div>
+
+</div>
+
+
+
+
+
+<footer class="footer">
+    <small>
+    <a href="http://railstutorial.org/">浣衣工作室</a>
+    by 白璐
+    </small>
+    <nav>
+    <ul>
+        <li><%= link_to "新闻",  '#'  %></li>
+        <li><%= link_to "联系", '#' %></li>
+        <li><a href="http://news.railstutorial.org/">合作</a></li>
+    </ul>
+    </nav>
+
+
+</footer>
+
+</div>
+
+
+  </body>
+</html>
+

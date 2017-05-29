@@ -1,0 +1,10 @@
+= simple_form_for([@factory, @factory_settlement_rule]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :from_date
+    = f.input :priority
+    = f.association :settlement_rule, collection: current_city.settlement_rules
+
+  .form-actions
+    = f.button :submit

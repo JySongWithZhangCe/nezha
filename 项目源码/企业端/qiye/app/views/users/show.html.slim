@@ -1,0 +1,90 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading#operations
+        | 基本信息
+      .panel-body
+        table.table.table-striped
+          tr
+            td width='15%' 名字
+            td width='35%' = @user.username
+            td width='15%' 邮箱
+            td width='35%' = @user.email
+          tr
+            td width='15%' 会员卡真钱
+            td width='35%' = @user.user_card.real_money
+            td width='15%' 会员卡假钱
+            td width='35%' = @user.user_card.fake_money
+
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        | 订单
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th Category
+              th Address
+              th Total price
+              th Status
+              th Courier status
+              th Voucher status
+              th Cleaning status
+              th
+
+          tbody
+            - @orders.each do |order|
+              tr
+                td = order.category.name
+                td = order.address
+                td = order.total_price
+                td = order.status
+                td = show_order_courier_status order.courier_status
+                td = show_order_voucher_status order.voucher_status
+                td = order.cleaning_status
+                td = link_to 'Show', order
+        = will_paginate @orders, renderer: BootstrapPagination::Rails, param_name: :order_page
+
+    .panel.panel-default
+      .panel-heading
+        | 会员卡流水
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th 真钱
+              th 假钱
+              th 类型
+              th 时间
+              th 关联记录
+
+          tbody
+            - @user_card_logs.each do |user_card_log|
+              tr
+                td = user_card_log.real_money
+                td = user_card_log.fake_money
+                td = show_user_card_log_kind user_card_log.kind
+                td = date_time user_card_log.created_at
+                td = link_to '详情', user_card_log.loggable
+        = will_paginate @user_card_logs, renderer: BootstrapPagination::Rails, param_name: :user_card_log_page
+      .panel-footer
+        = link_to '充值', charge_user_user_card_path(@user, @user.user_card), class: 'btn btn-info btn-sm'
+
+    .panel.panel-default
+      .panel-heading
+        | 优惠券
+      .panel-body
+        table.table.table-striped
+          thead
+            tr
+              th width='15%' 名称
+              th width='10%' 开始时间
+              th width='30%' 截止时间
+          tbody
+            = render @coupons
+        = will_paginate @coupons, renderer: BootstrapPagination::Rails, param_name: :coupon_page
+      .panel-footer
+        = link_to '发券', new_user_coupon_path(@user), class: 'btn btn-info btn-sm'
+

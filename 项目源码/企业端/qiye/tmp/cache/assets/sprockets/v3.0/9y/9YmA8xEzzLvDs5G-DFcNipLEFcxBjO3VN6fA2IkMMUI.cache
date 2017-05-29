@@ -1,0 +1,19 @@
+I"Þ(function() {
+  App.kefu = App.cable.subscriptions.create("KefuChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {
+      var id;
+      id = '#messages_' + data['user_id'];
+      return $(id).append("<p class='text-left bg-success'>" + data.message + '</p>');
+    },
+    speak: function(msg, user_id) {
+      return this.perform('speak', {
+        message: msg,
+        user_id: user_id
+      });
+    }
+  });
+
+}).call(this);
+:ET

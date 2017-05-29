@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  status: 1
+  payed_at: 2017-02-28 23:41:39
+  money: 1.5
+  user_card_pay: 1.5
+
+two:
+  order: two
+  status: 1
+  payed_at: 2017-02-28 23:41:39
+  money: 1.5
+  user_card_pay: 1.5

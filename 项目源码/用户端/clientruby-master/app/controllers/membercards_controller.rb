@@ -1,0 +1,69 @@
+# require 'date' 
+
+
+class MembercardsController < ApplicationController
+     before_action :current_user
+
+
+  def index
+        @membercards = Membercard.where(user_id:@current_user.id)
+  end
+
+
+
+
+  def show
+    @membercard = Membercard.find(params[:id])
+  end
+
+  def new
+    @membercard = Membercard.new
+  end
+
+  def edit
+    @membercard = Membercard.find(params[:id])
+  end
+
+  def create
+    @membercard = Membercard.new(membercard_params)
+    @membercard.update(user_id: @current_user.id)
+
+
+    @wallets = Wallet.where(user_id:@current_user.id)
+    @wallets.each do |wallet|
+        @balance = wallet.balance+@membercard.min
+        @point = wallet.point+@membercard.min
+        @month_recharge = wallet.month_recharge+@membercard.min
+
+        @tmp = 10
+        if @point<=1000
+            @tmp = 10
+        elsif @point <= 2000
+            @tmp = 9
+        elsif @point <=3000
+            @tmp = 8
+        elsif @point <= 4000
+            @tmp = 7
+        end
+
+        wallet.update(month_recharge: @balance, balance:  @balance, point: @point, discount: @tmp)
+
+    end
+
+
+
+    if @membercard.save
+        redirect_to @membercard
+    else
+        render 'new'
+    end
+
+  end
+
+  private
+  def membercard_params
+    params.require(:membercard).permit(:min, :give)
+  end
+
+
+end

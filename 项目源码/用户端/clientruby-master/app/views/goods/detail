@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>专业清洗</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", goods_list_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+<div class="container">
+
+
+
+
+
+<div style="line-height:30pt; background-color: #00FFFF; text-align:right;">
+  <span style="padding:10px 20px 10px 20px">首创</span>
+  <span style="padding:10px 20px 10px 20px">袋洗</span>
+  <span style="padding:10px 20px 10px 20px">低至158一袋</span>
+  <span style="padding:10px 100px 10px 20px">HOT! ! !</span>
+</div>
+
+
+<div style=" height:520px; background-color:#F0F0F0; margin-top:20px;border-radius:10px; ">
+  
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px 15px 15px 25px;font-size:13pt;text-align:center;">
+<button onclick="getLocation()" style="background: transparent; border: 0;">
+    单衬衫
+    <br>
+    <%= link_to image_tag("detail_1.PNG", alt: "Rails") %> 
+    <br
+    ><br>
+    <span style="color: red">￥10.00</span>
+    <p id="count1" style="float:right">&nbsp</p>
+</button>
+</div>
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">
+    真丝衬衫    
+    <br>
+    <%= link_to image_tag("detail_2.PNG", alt: "Rails"), goods_detail_path  %>
+    <span style="color: red">￥21.00</span>
+</div>
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">
+    保暖衬衫    
+    <br>
+    <%= link_to image_tag("detail_3.PNG", alt: "Rails"), goods_detail_path  %>
+    <span style="color: red">￥21.00</span>
+</div>
+
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">
+    Polo衫    
+    <br><br>
+    <%= link_to image_tag("detail_4.PNG", alt: "Rails"), goods_detail_path  %>
+    <br>
+    <span style="color: red">￥21.00</span>
+</div>
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px 15px 15px 25px;font-size:13pt;text-align:center;">
+    西服上衣    
+    <br><br>
+    <%= link_to image_tag("detail_5.PNG", alt: "Rails"), goods_detail_path  %>
+    <br>
+    <span style="color: red">￥21.00</span>
+</div>
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">
+    卫衣    
+    <br><br>
+    <%= link_to image_tag("detail_6.PNG", alt: "Rails"), goods_detail_path  %>
+    <br>
+    <span style="color: red">￥21.00</span>
+</div>
+
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px;font-size:13pt;text-align:center;">
+    真丝衬衫
+    <br>
+    <%= link_to image_tag("detail_2.PNG", alt: "Rails"), goods_detail_path  %>
+    <span style="color: red">￥21.00</span>
+</div>
+
+<div style="float:left; height:200px; width:200px; background-color:#FFF; margin:15px; font-size:13pt;text-align:center;">
+    <span>T恤</span>
+    <br>
+    <br>
+    <%= link_to image_tag("detail_4.PNG", alt: "Rails"), goods_detail_path  %><br>
+    <span style="color: red">￥10.00</span>
+ </div>
+
+</div>
+
+
+<!--<a href="pay">-->
+
+<a href="http://112.74.13.26:3000/orders/new">
+<div style="float:right; font-size:1.5em; width:100px; height:50px; background-color:gray; color:white; text-align:center;line-height:50px; border-radius:5px; ">
+   立即下单
+</div>
+</a>
+
+<div id="sum"  style="float:right; font-size:1.5em; width:150px; height:50px; color:red; text-align:center;line-height:50px; ">
+  总价：
+</div>
+
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+
+
+<script>  
+var x=document.getElementById("count1");  
+var sum=document.getElementById("sum");  
+var y=0;
+function getLocation()  
+{
+  y++;
+  x.innerHTML=y+"件";  
+  var tem=y*10.00;  
+  sum.innerHTML="总价："+tem+"￥"
+}
+</script>
+  </body>
+</html>
+
+
+
+

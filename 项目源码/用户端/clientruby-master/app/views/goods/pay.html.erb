@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>支付</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "浣衣坊", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "首页",    root_path %></li>
+          <li><%= link_to "退出", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header> 
+         
+          
+           <div id="navL">
+                    <a href="www.baidu.com" style="color: red; font-size:1.5em">全部功能</a> <br>  <br>
+                    
+                    <ul>
+                        <li><%= link_to "我的购物车",  '#'  %></li>
+                        <li><%= link_to "我的收藏", '#' %></li>
+                        <li><%= link_to "地址管理", personal_address_path %></li>
+                    </ul>
+
+            </div>
+
+
+
+<div class="container">
+        
+   <h1>支付</h2> 
+
+
+   
+    
+
+</div>
+
+
+<footer class="footer">
+
+</footer>
+<div id="corporation">
+Copyright  2017 Nezha.com Inc. All rights reserved.
+</div>
+
+
+
+  </body>
+</html>
+
+

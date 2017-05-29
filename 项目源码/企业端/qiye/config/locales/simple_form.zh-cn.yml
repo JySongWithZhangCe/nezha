@@ -1,0 +1,60 @@
+zh-cn:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "请确认内容是否正确:"
+    # Labels and hints examples
+    labels:
+      coupon_list:
+        name: 名称
+        validity_type: 有效期类型
+        valid_from: 开始日期
+        valid_to: 结束日期
+        fixed_begin_term: 领取后启用天数
+        fixed_term: 有效日期
+      order_promotion:
+        kind: 类型
+        premise: 满
+        discount: 减
+    placeholders:
+      worker:
+        name: 姓名
+        email: 邮件地址
+      
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    abbr_month_names: [~, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    # Used in date_select and datetime_select.
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
+  errors:
+    messages:
+      taken: 已经被使用
+      too_short: 长度太短
+      blank: 不能为空

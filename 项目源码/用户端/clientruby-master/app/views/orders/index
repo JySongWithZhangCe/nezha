@@ -1,0 +1,44 @@
+# encoding: utf-8
+
+<h1>Listing articles</h1>
+ 
+<table class="table table-stripted">
+        <thead>
+            <tr>
+                <th>总价</th>
+                <th>地址</th>
+                <th>经纬度</th>
+                <th>备注</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+                <td>
+                    <%= order.category %>
+                </td>
+                <td>
+                    <%= order.address %>
+                </td>
+                <td>40.241; 116.455596</td>
+                <td></td>
+                <td>
+                    <%= link_to '查看',      order_path(order) %>
+                </td>
+                <td>
+                    <%= link_to '编辑', edit_order_path(order) %>
+                </td>
+                <td>
+                    <%= link_to '删除', order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table> 
+
+
+

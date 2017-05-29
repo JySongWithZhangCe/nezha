@@ -1,0 +1,12 @@
+= simple_form_for(@voucher) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :order
+    = f.input :status
+    = f.input :payed_at
+    = f.input :money
+    = f.input :user_card_pay
+
+  .form-actions
+    = f.button :submit
